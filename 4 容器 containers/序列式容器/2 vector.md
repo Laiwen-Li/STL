@@ -468,12 +468,13 @@ void vector<T,Alloc>::insert(iterator position,size_type n,const T& x)
 
    区别：
 
-   |   对比项   |         vector         |          list          |
-   | :--------: | :--------------------: | :--------------------: |
-   |  数据结构  |         顺序表         |        双向链表        |
-   |  随机访问  |          支持          |         不支持         |
-   |  插入删除  |       有内存拷贝       |          较快          |
-   | 迭代器类型 | random_access_iterator | bidirectional_iterator |
+   |   对比项   |           vector           |             list             |
+   | :--------: | :------------------------: | :--------------------------: |
+   |  数据结构  |           顺序表           |           双向链表           |
+   |  随机访问  |            支持            |            不支持            |
+   |  插入删除  |         有内存拷贝         |             较快             |
+   | 迭代器类型 |   random_access_iterator   |    bidirectional_iterator    |
+   | 迭代器失效 | 插入删除后，部分迭代器失效 | 除插入删除的迭代器外，无影响 |
 
    应用：vector 拥有一段连续的内存空间，因此支持随机访问，如果需要高效的随即访问，而不在 乎插入和删除的效率，使用 vector。
 
